@@ -1,0 +1,19 @@
+.section__subtitle{
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #fff;
+    margin: 0;
+}
+
+@media screen and (max-width: 912px){
+    .section__subtitle{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .section__subtitle{
+        font-size: 14px;
+    }
+}

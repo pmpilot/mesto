@@ -1,0 +1,22 @@
+.intro__icon{
+    background-image: url(../../../images/Vector2.svg);
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #fff;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: unset;
+}
+
+.intro__icon:hover{
+    opacity: 0.6;
+}
+@media screen and (max-width: 620px){
+    .intro__icon{
+        width: 18px;
+        height: 18px;
+    }
+}
