@@ -16,7 +16,7 @@ openFormButton.addEventListener('click', toggleForm);
 closeFormButton.addEventListener('click', toggleForm);
 
 /*popup*/
-let formElement = document.querySelector(".popup__form");
+let formElement = document.querySelector(".popup");
 let nameInput = document.querySelector(".section__title");
 let jobInput = document.querySelector(".section__subtitle");
 let newName = document.querySelector(".popup__filed_name");
@@ -34,9 +34,3 @@ function formSubmitHandler (evt) {
     console.log(newJob);
 }
 formElement.addEventListener('submit', formSubmitHandler);
-
-/*like*/
-/*let like = document.getElementById('btn');
-btn.addEventListener("click", function() {
-    like.classList.add("place__like-black");
-});*/

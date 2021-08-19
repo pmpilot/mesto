@@ -14,13 +14,12 @@
 @import url('../blocks/form/form.css');
 @import url('../blocks/form/__content/form__content.css');
 @import url('../blocks/form/__title/form__title.css');
-@import url('../blocks/form/__submit-btn/form__submit-btn.css');
 @import url('../blocks/form/__close/form__close.css');
 @import url('../blocks/form/__open/form__open.css');
 @import url('../blocks/form/_is-opened/form_is-opened.css');
 /*popup*/
 @import url('../blocks/popup/__filed/popup__filed.css');
-@import url('../blocks/popup/__form/popup__form.css');
+@import url('../blocks/popup/popup.css');
 @import url('../blocks/popup/__submit-button/form__submit-button.css');
 
 /*section*/
