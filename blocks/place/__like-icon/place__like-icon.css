@@ -7,10 +7,11 @@
     width: 22px;
     right: 10px;
     transition: 0.3s;
+    outline: none;
 }
 
 .place__like-icon:hover{
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .place__like-icon:active{

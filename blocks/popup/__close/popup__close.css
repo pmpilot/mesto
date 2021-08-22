@@ -1,5 +1,5 @@
-.form__close{
-    background-image:  url(../../../images/Close\ Icon.svg);
+.popup__close{
+    background-image:  url(../../../images/Close.svg);
     background-size: 100%;
     width: 32px;
     height: 32px;
@@ -9,14 +9,15 @@
     transition: 0.3s;
     background-color: unset;
     border: none;
+    outline: none;
 }
 
-.form__close:hover{
+.popup__close:hover{
     opacity: 0.6;
 }
 
 @media screen and (max-width: 620px) {
-    .form__close{
+    .popup__close{
         width: 20px;
         height: 20px;
         margin: -36px 0 auto auto;

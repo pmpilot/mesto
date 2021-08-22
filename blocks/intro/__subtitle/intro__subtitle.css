@@ -1,20 +1,23 @@
-.section__subtitle{
+.intro__subtitle{
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.22;
     color: #fff;
     margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 912px){
-    .section__subtitle{
+    .intro__subtitle{
         margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 620px){
-    .section__subtitle{
+    .intro__subtitle{
         font-size: 14px;
     }
 }

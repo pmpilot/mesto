@@ -1,36 +1,38 @@
+/*выбор элементов*/
+/*popup*/
+let openPopupButton = document.querySelector('.intro__open');
+let popup = document.querySelector('.popup');
+let closePopupButton = document.querySelector('.popup__close');
 /*form*/
-let openFormButton = document.querySelector('.form__open');
-let form = document.querySelector('.form');
-let closeFormButton = document.querySelector('.form__close');
-
-function toggleForm() {
-    form.classList.toggle('form_is-opened');
-}
-
-openFormButton.addEventListener(
-    'click', 
-    toggleForm
-);
-
-openFormButton.addEventListener('click', toggleForm);
-closeFormButton.addEventListener('click', toggleForm);
+let formElement = document.querySelector(".popup__form");
+let introTitle = document.querySelector(".intro__title");
+let introSubtitle = document.querySelector(".intro__subtitle");
+let nameInput = document.querySelector(".popup__input_name");
+let jobInput = document.querySelector(".popup__input_job");
 
 /*popup*/
-let formElement = document.querySelector(".popup");
-let nameInput = document.querySelector(".section__title");
-let jobInput = document.querySelector(".section__subtitle");
-let newName = document.querySelector(".popup__filed_name");
-let newJob = document.querySelector(".popup__filed_job");
+/*открывает и закрываем окно редактирование*/
+function toggleForm() {
+    if (!popup.classList.contains('.popup__is-opened')){ /*! -условие с отрицанием*/
+    nameInput.value = introTitle.textContent;
+    jobInput.value = introSubtitle.textContent;
+    }
 
+    popup.classList.toggle('popup__is-opened');
+}
+
+/*input*/
+/*редактируем текст и сохраняем*/
 function formSubmitHandler (evt) {
     evt.preventDefault();
-
-    nameInput.textContent = newName.value;
-    jobInput.textContent = newJob.value;
+    
+    introTitle.textContent = nameInput.value;
+    introSubtitle.textContent = jobInput.value;
 
     toggleForm()
-
-    console.log(newName);
-    console.log(newJob);
 }
+
+/*listeners*/
 formElement.addEventListener('submit', formSubmitHandler);
+openPopupButton.addEventListener('click', toggleForm);
+closePopupButton.addEventListener('click', toggleForm);

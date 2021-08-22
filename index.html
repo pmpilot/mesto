@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./pages/index.css"/>
     <title>Место</title>
   </head>
   <body class="page">
     <!--Header-->
     <header class="header">
-      <img src="./images/Vector1.svg" alt="Mesto" class="header__logo">
-      <div class="header__line">
-      </div>
+      <img src="./images/Vector1.svg" alt="Место" class="header__logo">
     </header>
 
     <!--Content-->
     <main class="content page__content">
       <!--Intro-->
       <section class="intro">
-        <img src="./images/image.jpg" alt="Жак-Ив Кусто" class="intro__avatar">
-        <div class="section content__section">
-          <h1 class="section__title">
-            Жак-Ив Кусто
-          </h1>
-          <button class="form__open" type="button"></button>
-          <p class="section__subtitle">Исследователь океана</p>
+        <img src="./images/image.jpg" alt="Аватар" class="intro__avatar">
+        <div class="intro__section">
+          <h1 class="intro__title">Жак-Ив Кусто</h1>
+          <button class="intro__open" type="button"></button>
+          <p class="intro__subtitle">Исследователь океана</p>
         </div>
         <button class="intro__submit-btn" type="button"></button>
       </section>
       <!--Button edit-->
-      <div class="form">
-        <div class="form__content">
-          <button type="button" class="form__close"></button>
-          <h2 class="form__title">Редактировать профиль</h2>
-          <form class="popup" name="form">
-            <input value="Жак-Ив Кусто" type="text" name="name" placeholder="имя" class="popup__filed popup__filed_name">
-            <input value="Исследователь океана" type="text" name="job" placeholder="профессия" class="popup__filed popup__filed_job">
+      <div class="popup">
+        <div class="popup__content">
+          <button type="button" class="popup__close"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form" name="form">
+            <input value="" type="text" name="name" placeholder="" class="popup__input popup__input_name">
+            <input value="" type="text" name="job" placeholder="" class="popup__input popup__input_job">
             <button class="popup__submit-button" type="submit">
               Сохранить
             </button>
@@ -46,66 +42,42 @@
       <!--Places-->
       <section class="places">
         <article class="place">
-          <img
-            class="place__image"
-            src="./images/kirill-pershin-1088404-unsplash.jpg"
-            alt="храм"
-          />
+          <img class="place__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="храм"/>
           <div class="place__paragraph">
             <h2 class="place__title">Карачаевск</h2>
             <button id="btn" class="place__like-icon" type="button"></button>
           </div>
         </article>
         <article class="place">
-          <img
-            class="place__image"
-            src="./images/kirill-pershin-1404681-unsplash.jpg"
-            alt="Эльбрус"
-          />
+          <img class="place__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус"/>
           <div class="place__paragraph">
             <h2 class="place__title">Гора Эльбрус</h2>
             <button class="place__like-icon" type="button"></button>
           </div>
         </article>
         <article class="place">
-          <img
-            class="place__image"
-            src="./images/kirill-pershin-1556355-unsplash.jpg"
-            alt="Домбай"
-          />
+          <img class="place__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай"/>
           <div class="place__paragraph">
             <h2 class="place__title">Домбай</h2>
             <button class="place__like-icon" type="button"></button>
           </div>
         </article>
         <article class="place">
-          <img
-            class="place__image"
-            src="./images/kirill-pershin-1404681-unsplash.jpg"
-            alt="Эльбрус"
-          />
+          <img class="place__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус"/>
           <div class="place__paragraph">
             <h2 class="place__title">Гора Эльбрус</h2>
             <button class="place__like-icon" type="button"></button>
           </div>
         </article>
         <article class="place">
-          <img
-            class="place__image"
-            src="./images/kirill-pershin-1556355-unsplash.jpg"
-            alt="Домбай"
-          />
+          <img class="place__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай"/>
           <div class="place__paragraph">
             <h2 class="place__title">Домбай</h2>
             <button class="place__like-icon" type="button"></button>
           </div>
         </article>
         <article class="place">
-          <img
-            class="place__image"
-            src="./images/kirill-pershin-1088404-unsplash.jpg"
-            alt="храм"
-          />
+          <img class="place__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="храм"/>
           <div class="place__paragraph">
             <h2 class="place__title">Карачаево-Черкессия</h2>
             <button class="place__like-icon" type="button"></button>

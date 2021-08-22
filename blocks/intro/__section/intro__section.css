@@ -1,0 +1,15 @@
+.intro__section{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    column-gap: 18px;
+    row-gap: 16px;
+}
+
+@media screen and (max-width: 912px){
+    .intro__section{
+        column-gap: 10px;
+        row-gap: 14px;
+        justify-items: center;
+    }
+}

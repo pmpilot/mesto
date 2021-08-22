@@ -1,6 +1,6 @@
 .intro__submit-btn{
     background-image: url(../../../images/Vector+.svg);
-    background-size: 22px 22px;
+    background-size: 22px;
     background-repeat: no-repeat;
     background-position: center;
     width: 150px;
@@ -11,6 +11,7 @@
     cursor: pointer;
     transition: 0.3s;
     background-color: unset;
+    outline: none;
 }
 
 .intro__submit-btn:hover{
@@ -28,5 +29,6 @@
 @media screen and (max-width: 620px){
     .intro__submit-btn{
         min-width: 282px;
+        background-size: 16px;
     }
 }
