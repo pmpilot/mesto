@@ -27,8 +27,6 @@
 @import url('../blocks/popup/__form/popup__form.css');
 @import url('../blocks/popup/__title/popup__title.css');
 @import url('../blocks/popup/__is-opened/popup__is-opened.css');
-@import url('../blocks/popup/__input_job/popup__input_job.css');
-@import url('../blocks/popup/__input_name/popup__input_name.css');
 /*places*/
 @import url('../blocks/places/places.css');
 /*place*/
