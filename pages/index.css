@@ -26,7 +26,7 @@
 @import url('../blocks/popup/__content/popup__content.css');
 @import url('../blocks/popup/__form/popup__form.css');
 @import url('../blocks/popup/__title/popup__title.css');
-@import url('../blocks/popup/__is-opened/popup__is-opened.css');
+@import url('../blocks/popup/_is-opened/popup_is-opened.css');
 /*places*/
 @import url('../blocks/places/places.css');
 /*place*/
