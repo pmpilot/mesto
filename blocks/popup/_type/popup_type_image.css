@@ -1,5 +1,5 @@
 .popup_type_image {
-    display: none
+    display: none;
 }
 .popup_type_image.active {
     display: block;
