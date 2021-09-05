@@ -1,5 +1,4 @@
-.popup{
-    display: flex;
+.popup {
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, .5);
@@ -8,5 +7,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
+    display: flex;
+    visibility: hidden; /*спрятан, замена *display: none;*/
+    opacity: 0;
+    transition: all 0.8s ease-in-out; /*анимация*/
 }

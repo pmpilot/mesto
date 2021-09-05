@@ -1,0 +1,12 @@
+.popup__content-image{
+    display: grid;
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+}
+
+@media screen and (max-width: 400px) {
+    .popup__content-image{
+        max-width: 282px;
+    }
+}

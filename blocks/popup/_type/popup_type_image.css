@@ -1,0 +1,6 @@
+.popup_type_image {
+    display: none
+}
+.popup_type_image.active {
+    display: block;
+}
