@@ -19,10 +19,10 @@
         <img src="./images/image.jpg" alt="Аватар" class="intro__avatar">
         <div class="intro__section">
           <h1 class="intro__title">Жак-Ив Кусто</h1>
-          <button class="intro__open" type="button"></button>
+          <button class="intro__open" id="button" type="button"></button>
           <p class="intro__subtitle">Исследователь океана</p>
         </div>
-        <button class="intro__submit-btn" type="button"></button>
+        <button class="intro__submit-btn" id="button" type="button"></button>
       </section>
       <!--Button edit-->
       <div class="popup popup_type_edit-profile">
@@ -30,8 +30,8 @@
           <button type="button" class="popup__close"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__form" name="form">
-            <input value="" type="text" name="name" placeholder="" class="popup__input popup__input_type_name">
-            <input value="" type="text" name="job" placeholder="" class="popup__input popup__input_type_job">
+            <input value="" type="text" name="name" placeholder="Имя" class="popup__input popup__input_type_name">
+            <input value="" type="text" name="job" placeholder="Профессия" class="popup__input popup__input_type_job">
             <button class="popup__submit-button" type="submit">
               Сохранить
             </button>
@@ -45,7 +45,7 @@
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form" name="form">
             <input value="" type="text" name="name" placeholder="Название" class="popup__input popup__input_type_place">
-            <input value="" type="text" name="job" placeholder="Ссылка на картинку" class="popup__input popup__input_type_url">
+            <input value="" type="url" name="img" placeholder="Ссылка на картинку" class="popup__input popup__input_type_url">
             <button class="popup__submit-button" type="submit">
               Сохранить
             </button>
@@ -54,49 +54,7 @@
       </div>
 
       <!--Places-->
-      <section class="places"> <!--
-        <article class="place">
-          <img class="place__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="храм"/>
-          <div class="place__paragraph">
-            <h2 class="place__title">Карачаевск</h2>
-            <button id="btn" class="place__like-icon" type="button"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус"/>
-          <div class="place__paragraph">
-            <h2 class="place__title">Гора Эльбрус</h2>
-            <button class="place__like-icon" type="button"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай"/>
-          <div class="place__paragraph">
-            <h2 class="place__title">Домбай</h2>
-            <button class="place__like-icon" type="button"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус"/>
-          <div class="place__paragraph">
-            <h2 class="place__title">Гора Эльбрус</h2>
-            <button class="place__like-icon" type="button"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай"/>
-          <div class="place__paragraph">
-            <h2 class="place__title">Домбай</h2>
-            <button class="place__like-icon" type="button"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="храм"/>
-          <div class="place__paragraph">
-            <h2 class="place__title">Карачаево-Черкессия</h2>
-            <button class="place__like-icon" type="button"></button>
-          </div>
-        </article>-->
+      <section class="places"> 
       </section>
     </main>
 
@@ -109,7 +67,7 @@
     <div class="popup popup_type_image">
       <div class="popup__content-image">
         <button type="button" class="popup__close"></button>
-        <img class="popup__image" src="#" alt="Изображение места">
+        <img class="popup__image" src="#" alt="#">
         <h3 class="popup__title-image"></h3>
       </div>
     </div>
