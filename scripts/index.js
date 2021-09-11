@@ -14,9 +14,6 @@ const addCardModalCloseButton = addCardModal.querySelector('.popup__close'); /*�
 const editProfileModalCloseButton = editProfileModal.querySelector('.popup__close'); /*крестик редактор профайла*/
 const imageModalCloseButton = imageModal.querySelector('.popup__close'); /*крестик просмотор картинок*/
 
-/*const popup = document.querySelectorAll('.popup');
-
-
 /*form*/
 const introTitle = document.querySelector(".intro__title");
 const introSubtitle = document.querySelector(".intro__subtitle");
@@ -30,6 +27,11 @@ const urlInput = addCardForm.querySelector('.popup__input_type_url');
 
 const imageModalTitle = imageModal.querySelector('.popup__title');
 const imageModalImg = imageModal.querySelector('.popup__image');
+
+//карточки
+const cardTemplate = document.querySelector('.template-card').content.querySelector('.place');
+const list = document.querySelector('.places');
+
 
 //функция отрытие popup
 const openPopup = (popup) => {
@@ -116,10 +118,6 @@ const initialCards = [
     }
   ];
 
-
-  const cardTemplate = document.querySelector('.template-card').content.querySelector('.place');
-  const list = document.querySelector('.places');
-
 //like
   function handleLikeClick(e) {
     e.target.classList.toggle('active')
@@ -133,9 +131,10 @@ const initialCards = [
 //Просмотор картинок
   function handleImageClick(e) {
     const imagePopup = document.querySelector('.popup_type_image');
-    imagePopup.classList.add('popup')
-    const img = imagePopup.querySelector('.popup__image')
-    img.src = e.target.getAttribute('src')
+    imagePopup.classList.add('popup');
+    const img = imagePopup.querySelector('.popup__image');
+    img.src = e.target.getAttribute('src');
+    img.setAttribute('alt', 'фотография места');
     const titlePopupElement = document.querySelector('.popup__title-image');
     titlePopupElement.textContent = e.target.closest('.place').querySelector('.place__title').textContent;
     openPopup(imagePopup)
@@ -156,6 +155,7 @@ const initialCards = [
       cardTitle.textContent = data.name;
       cardImage.src = data.link;
       cardImage.alt = data.alt;
+      cardImage.setAttribute('alt', 'фотография места');
 
       return cardElement;
   }
