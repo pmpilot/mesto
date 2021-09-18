@@ -28,9 +28,53 @@ const urlInput = addCardForm.querySelector('.popup__input_type_url');
 const imageModalTitle = imageModal.querySelector('.popup__title');
 const imageModalImg = imageModal.querySelector('.popup__image');
 
+const name = document.querySelector('.intro__title');
+const job = document.querySelector('.intro__subtitle');
+
 //карточки
 const cardTemplate = document.querySelector('.template-card').content.querySelector('.place');
 const list = document.querySelector('.places');
+
+
+//функция закрытия на нажатие esc
+const closeEsc = document.addEventListener ('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    addCardModal.classList.remove('popup_is-opened');
+    editProfileModal.classList.remove('popup_is-opened');
+    imageModal.classList.remove('popup_is-opened');
+    }
+    closePopup(closeEsc);
+  });
+
+  // я бы оставил эту функию закрытия, но не знаю как навесить обработчик mousedown, в котором сделать evt.stopPropagation().
+/*const closeMouse = document.addEventListener('mousedown', function (evt) {
+  if (!evt.target.closest('#popup__content')) {
+    addCardModal.classList.remove('popup_is-opened');
+    editProfileModal.classList.remove('popup_is-opened');
+    imageModal.classList.remove('popup_is-opened');
+  }
+  closePopup(closeMouse);
+})*/
+
+//функция закрытия попапа на нажатие оверлей
+const closePopupOverlay = (event, popup) => {
+  if (event.target.classList.contains("popup_is-opened")) {
+    closePopup(popup);
+  }
+};
+
+editProfileModal.addEventListener("click", (event) => {
+  closePopupOverlay(event, editProfileModal);
+});
+
+addCardModal.addEventListener("click", (event) => {
+  closePopupOverlay(event, addCardModal);
+});
+
+imageModal.addEventListener("click", (event) => {
+  closePopupOverlay(event, imageModal);
+});
+
 
 
 //функция отрытие popup
@@ -62,6 +106,13 @@ addCardModalCloseButton.addEventListener('click', () => {
 imageModalCloseButton.addEventListener('click', () => {
   closePopup(imageModal)
 });
+
+function imputText() {
+  nameInput.value = name.textContent;
+  jobInput.value = job.textContent;
+  openPopup();
+}
+profileEditButton.addEventListener('click', imputText);
 
 /*редактируем текст и сохраняем*/
 function formSubmitHandler (evt) {

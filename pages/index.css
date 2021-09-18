@@ -31,6 +31,9 @@
 @import url('../blocks/popup/__title-image/popup__title-image.css');
 @import url('../blocks/popup/__content-image/popup__content-image.css');
 @import url('../blocks/popup/__image/popup__image.css');
+@import url('../blocks/popup/__error/_visible/popup__error_visible.css');
+@import url('../blocks/popup/__button/_disabled/popup__button_disabled.css');
+@import url('../blocks/popup/__input/_type/popup__input_type_error.css');
 /*places*/
 @import url('../blocks/places/places.css');
 /*place*/
@@ -44,3 +47,5 @@
 /*footer*/
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__copyright/footer__copyright.css');
+/*error*/
+@import url('../blocks/error/error.css');
