@@ -14,6 +14,8 @@ const addCardModalCloseButton = addCardModal.querySelector('.popup__close'); /*�
 const editProfileModalCloseButton = editProfileModal.querySelector('.popup__close'); /*крестик редактор профайла*/
 const imageModalCloseButton = imageModal.querySelector('.popup__close'); /*крестик просмотор картинок*/
 
+const popup = document.querySelector('.popup');
+
 /*form*/
 const introTitle = document.querySelector(".intro__title");
 const introSubtitle = document.querySelector(".intro__subtitle");
@@ -36,16 +38,6 @@ const cardTemplate = document.querySelector('.template-card').content.querySelec
 const list = document.querySelector('.places');
 
 
-//функция закрытия на нажатие esc
-const closeEsc = document.addEventListener ('keydown', function (evt) {
-  if (evt.key === 'Escape') {
-    addCardModal.classList.remove('popup_is-opened');
-    editProfileModal.classList.remove('popup_is-opened');
-    imageModal.classList.remove('popup_is-opened');
-    }
-    closePopup(closeEsc);
-  });
-
   // я бы оставил эту функию закрытия, но не знаю как навесить обработчик mousedown, в котором сделать evt.stopPropagation().
 /*const closeMouse = document.addEventListener('mousedown', function (evt) {
   if (!evt.target.closest('#popup__content')) {
@@ -55,6 +47,70 @@ const closeEsc = document.addEventListener ('keydown', function (evt) {
   }
   closePopup(closeMouse);
 })*/
+
+
+//функция отрытие popup
+const openPopup = (popup) => {
+  popup.classList.add('popup_is-opened');
+};
+
+profileEditButton.addEventListener('click', () => {
+  openPopup(editProfileModal)
+});
+
+openAddCardModalButton.addEventListener('click', () => {
+  openPopup(addCardModal)
+});
+
+
+//функция закрытие popup
+const closePopup = (popup) => {
+  popup.classList.remove('popup_is-opened');
+};
+
+editProfileModalCloseButton.addEventListener('click', () => {
+  closePopup(editProfileModal)
+});
+
+addCardModalCloseButton.addEventListener('click', () => {
+  closePopup(addCardModal)
+});
+
+imageModalCloseButton.addEventListener('click', () => {
+  closePopup(imageModal)
+});
+
+//заполняет поля форм при открытии окна редактирования
+function imputText() {
+  nameInput.value = name.textContent;
+  jobInput.value = job.textContent;
+};
+profileEditButton.addEventListener('click', imputText);
+
+/*редактируем текст и сохраняем*/
+function formSubmitHandler (evt) {
+    evt.preventDefault();
+    introTitle.textContent = nameInput.value;
+    introSubtitle.textContent = jobInput.value;
+
+    closePopup(editProfileModal);
+};
+
+/*редактирование карточек*/
+function addCardSubmitHandler(evt) {
+  evt.preventDefault();
+
+  renderCard({name: placeInput.value, link: urlInput.value})
+  placeInput.value = '';
+  urlInput.value = '';
+
+  closePopup(addCardModal);
+};
+
+/*открытие и закрытие окон редактирования*/
+editForm.addEventListener('submit', formSubmitHandler);
+//addCardForm.addEventListener('submit', addCardSubmitHandler);
+
 
 //функция закрытия попапа на нажатие оверлей
 const closePopupOverlay = (event, popup) => {
@@ -76,67 +132,15 @@ imageModal.addEventListener("click", (event) => {
 });
 
 
+//функция закрытия на нажатие esc
+const closeEsc = document.addEventListener ('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    addCardModal.classList.remove('popup_is-opened');
+    editProfileModal.classList.remove('popup_is-opened');
+    imageModal.classList.remove('popup_is-opened');
+    }
+  });
 
-//функция отрытие popup
-const openPopup = (popup) => {
-  popup.classList.add('popup_is-opened');
-};
-
-profileEditButton.addEventListener('click', () => {
-  openPopup(editProfileModal)
-});
-
-openAddCardModalButton.addEventListener('click', () => {
-  openPopup(addCardModal)
-});
-
-//функция закрытие popup
-const closePopup = (popup) => {
-  popup.classList.remove('popup_is-opened');
-};
-
-editProfileModalCloseButton.addEventListener('click', () => {
-  closePopup(editProfileModal)
-});
-
-addCardModalCloseButton.addEventListener('click', () => {
-  closePopup(addCardModal)
-});
-
-imageModalCloseButton.addEventListener('click', () => {
-  closePopup(imageModal)
-});
-
-function imputText() {
-  nameInput.value = name.textContent;
-  jobInput.value = job.textContent;
-  openPopup();
-}
-profileEditButton.addEventListener('click', imputText);
-
-/*редактируем текст и сохраняем*/
-function formSubmitHandler (evt) {
-    evt.preventDefault();
-    introTitle.textContent = nameInput.value;
-    introSubtitle.textContent = jobInput.value;
-
-    closePopup(editProfileModal);
-}
-
-/*редактирование карточек*/
-function addCardSubmitHandler(evt) {
-  evt.preventDefault();
-
-  renderCard({name: placeInput.value, link: urlInput.value})
-  placeInput.value = '';
-  urlInput.value = '';
-
-  closePopup(addCardModal);
-}
-
-/*открытие и закрытие окон редактирования*/
-editForm.addEventListener('submit', formSubmitHandler);
-addCardForm.addEventListener('submit', addCardSubmitHandler);
 
 
 /*прописываем карточки*/
