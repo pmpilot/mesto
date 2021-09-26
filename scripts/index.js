@@ -10,6 +10,8 @@ const addCardForm = addCardModal.querySelector(".popup__form");/*форма ре
 const profileEditButton = document.querySelector('.intro__open'); /*кнопка открытие редактора профайла*/
 const openAddCardModalButton = document.querySelector('.intro__submit-btn'); /*кнопка открытие редактор карточек*/
 
+
+
 const addCardModalCloseButton = addCardModal.querySelector('.popup__close'); /*крестик редактор карточек*/
 const editProfileModalCloseButton = editProfileModal.querySelector('.popup__close'); /*крестик редактор профайла*/
 const imageModalCloseButton = imageModal.querySelector('.popup__close'); /*крестик просмотор картинок*/
@@ -63,6 +65,7 @@ openAddCardModalButton.addEventListener('click', () => {
 });
 
 
+
 //функция закрытие popup
 const closePopup = (popup) => {
   popup.classList.remove('popup_is-opened');
@@ -109,7 +112,7 @@ function addCardSubmitHandler(evt) {
 
 /*открытие и закрытие окон редактирования*/
 editForm.addEventListener('submit', formSubmitHandler);
-//addCardForm.addEventListener('submit', addCardSubmitHandler);
+addCardForm.addEventListener('submit', addCardSubmitHandler);
 
 
 //функция закрытия попапа на нажатие оверлей
@@ -144,8 +147,6 @@ const closeEsc = document.addEventListener ('keydown', function (evt) {
 
 
 /*прописываем карточки*/
-addCardModalCloseButton.addEventListener('click', openPopup);
-
 const initialCards = [
     {
       name: 'Архыз',
@@ -180,7 +181,7 @@ const initialCards = [
 
 //Удаляем карточки
   function handleDeleteClick(e) {
-      e.target.closest('.place').remove()
+    e.target.closest('.place').remove()
   }
 
 //Просмотор картинок

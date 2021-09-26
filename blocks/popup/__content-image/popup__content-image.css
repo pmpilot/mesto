@@ -1,8 +1,11 @@
 .popup__content-image{
     display: grid;
-    max-width: 75vw;
+    /*max-width: 75vw;*/
+    max-width: calc(75vw - 50px);
+    max-height: calc(100vh - 120px);
     height: auto;
     width: auto;
+
 }
 
 @media screen and (max-width: 400px) {
