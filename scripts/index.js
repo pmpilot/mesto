@@ -46,6 +46,7 @@ const titlePopupElement = document.querySelector('.popup__title-image');
 
 //функция отрытие popup
 const openPopup = (popup) => {
+  document.addEventListener('keydown', closePopupEscape);
   popup.classList.add('popup_is-opened');
 };
 
@@ -58,8 +59,19 @@ openAddCardModalButton.addEventListener('click', () => {
 });
 
 
+//функция закрытия на нажатие esc
+function closePopupEscape(evt) {
+  if (evt.key === 'Escape'){
+    const openPopup = document.querySelector('.popup_is-opened');
+    closePopup(openPopup);
+  }
+}
+
+document.addEventListener('keydown', closePopupEscape);
+
 //функция закрытие popup
 const closePopup = (popup) => {
+  document.removeEventListener('keydown', closePopupEscape);
   popup.classList.remove('popup_is-opened');
 };
 
@@ -127,7 +139,7 @@ imageModal.addEventListener("click", (event) => {
 });
 
 
-//функция закрытия на нажатие esc
+/*//функция закрытия на нажатие esc
 function closePopupEscape(evt) {
   if (evt.key === 'Escape'){
     const openPopup = document.querySelector('.popup_is-opened');
@@ -137,6 +149,22 @@ function closePopupEscape(evt) {
 
 document.addEventListener('keydown', closePopupEscape);
 
+
+editProfileModalCloseButton.addEventListener('click', () => {
+  document.removeEventListener('keydown', closePopupEscape);
+  closePopup(editProfileModal);
+})
+
+addCardModalCloseButton.addEventListener('click', () => {
+  document.removeEventListener('keydown', closePopupEscape);
+  closePopup(addCardModal);
+})
+
+imageModalCloseButton.addEventListener('click', () => {
+  document.removeEventListener('keydown', closePopupEscape);
+  closePopup(imageModal);
+})
+*/
 
 //like
   function handleLikeClick(e) {
