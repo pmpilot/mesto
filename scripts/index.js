@@ -1,4 +1,3 @@
-/*выбор элементов*/
 /*popup*/
 const addCardModal = document.querySelector('.popup_type_add-card'); /*открывет карточки*/
 const editProfileModal = document.querySelector('.popup_type_edit-profile'); /*открывает профайла*/
@@ -39,16 +38,10 @@ const job = document.querySelector('.intro__subtitle');
 const cardTemplate = document.querySelector('.template-card').content.querySelector('.place');
 const list = document.querySelector('.places');
 
-
-  // я бы оставил эту функию закрытия, но не знаю как навесить обработчик mousedown, в котором сделать evt.stopPropagation().
-/*const closeMouse = document.addEventListener('mousedown', function (evt) {
-  if (!evt.target.closest('#popup__content')) {
-    addCardModal.classList.remove('popup_is-opened');
-    editProfileModal.classList.remove('popup_is-opened');
-    imageModal.classList.remove('popup_is-opened');
-  }
-  closePopup(closeMouse);
-})*/
+//просмотор картинок
+const imagePopup = document.querySelector('.popup_type_image');
+const img = imagePopup.querySelector('.popup__image');
+const titlePopupElement = document.querySelector('.popup__title-image');
 
 
 //функция отрытие popup
@@ -63,7 +56,6 @@ profileEditButton.addEventListener('click', () => {
 openAddCardModalButton.addEventListener('click', () => {
   openPopup(addCardModal)
 });
-
 
 
 //функция закрытие popup
@@ -84,14 +76,14 @@ imageModalCloseButton.addEventListener('click', () => {
 });
 
 //заполняет поля форм при открытии окна редактирования
-function imputText() {
+function fillInProfileInputValues() {
   nameInput.value = name.textContent;
   jobInput.value = job.textContent;
 };
-profileEditButton.addEventListener('click', imputText);
+profileEditButton.addEventListener('click', fillInProfileInputValues);
 
 /*редактируем текст и сохраняем*/
-function formSubmitHandler (evt) {
+function formEditProfileSubmitHandler (evt) {
     evt.preventDefault();
     introTitle.textContent = nameInput.value;
     introSubtitle.textContent = jobInput.value;
@@ -111,7 +103,7 @@ function addCardSubmitHandler(evt) {
 };
 
 /*открытие и закрытие окон редактирования*/
-editForm.addEventListener('submit', formSubmitHandler);
+editForm.addEventListener('submit', formEditProfileSubmitHandler);
 addCardForm.addEventListener('submit', addCardSubmitHandler);
 
 
@@ -136,43 +128,15 @@ imageModal.addEventListener("click", (event) => {
 
 
 //функция закрытия на нажатие esc
-const closeEsc = document.addEventListener ('keydown', function (evt) {
-  if (evt.key === 'Escape') {
-    addCardModal.classList.remove('popup_is-opened');
-    editProfileModal.classList.remove('popup_is-opened');
-    imageModal.classList.remove('popup_is-opened');
-    }
-  });
+function closePopupEscape(evt) {
+  if (evt.key === 'Escape'){
+    const openPopup = document.querySelector('.popup_is-opened');
+    closePopup(openPopup);
+  }
+}
 
+document.addEventListener('keydown', closePopupEscape);
 
-
-/*прописываем карточки*/
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
 
 //like
   function handleLikeClick(e) {
@@ -184,14 +148,11 @@ const initialCards = [
     e.target.closest('.place').remove()
   }
 
+
 //Просмотор картинок
   function handleImageClick(e) {
-    const imagePopup = document.querySelector('.popup_type_image');
-    imagePopup.classList.add('popup');
-    const img = imagePopup.querySelector('.popup__image');
     img.src = e.target.getAttribute('src');
     img.setAttribute('alt', 'фотография места');
-    const titlePopupElement = document.querySelector('.popup__title-image');
     titlePopupElement.textContent = e.target.closest('.place').querySelector('.place__title').textContent;
     openPopup(imagePopup)
   }
