@@ -41,13 +41,12 @@
         </div>
       </div>
 
-
       <!--Редактируем карточки-->
       <div class="popup popup_type_add-card">
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h2 class="popup__title">Новое место</h2>
-          <form class="popup__form" name="form">
+          <form class="popup__form" name="form" novalidate>
             <input id="name-card" value="" type="text" name="name" minlength="2" maxlength="30" required placeholder="Название" class="popup__input popup__input_type_place">
             <span id="name-card-error" class="error"></span>
             <input id="link" value="" type="url" name="img" minlength="2" required placeholder="Ссылка на картинку" class="popup__input popup__input_type_url">
@@ -89,10 +88,7 @@
       </article>
     </template>
 
-
-    <script src="./scripts/initial-сards.js"></script>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script type='module' src='./scripts/index.js'></script>
 
   </body>
 </html>

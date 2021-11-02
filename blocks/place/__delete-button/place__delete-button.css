@@ -1,14 +1,13 @@
 .place__delete-button{
     position: absolute;
     background-image:  url(../../../images/Group.svg);
-    background-size: 100%;
     width: 18px;
-    height: 19.3px;
+    height: 19px;
     margin: 18px auto auto 249px;
     padding: 0;
     cursor: pointer;
     transition: 0.3s;
-    background-color: unset;
+    background-color: transparent;
     border: none;
     outline: none;
 }
