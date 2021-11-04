@@ -41,7 +41,7 @@ export class Card {
 //Удаляем карточки
   _handleDeleteClick() {
     this._element.remove();
-    this._element.innerHTML = null;
+    this._element = null;
   }
 
 //Просмотор картинок

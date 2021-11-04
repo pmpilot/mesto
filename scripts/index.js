@@ -29,8 +29,6 @@ const addCardModalCloseButton = addCardModal.querySelector('.popup__close'); /*�
 const editProfileModalCloseButton = editProfileModal.querySelector('.popup__close'); /*крестик редактор профайла*/
 const imageModalCloseButton = imageModal.querySelector('.popup__close'); /*крестик просмотор картинок*/
 
-const popup = document.querySelector('.popup');
-
 /*form*/
 const introTitle = document.querySelector(".intro__title");
 const introSubtitle = document.querySelector(".intro__subtitle");
@@ -63,9 +61,6 @@ openAddCardModalButton.addEventListener('click', () => {
   validationCard.disabledButton();
 });
 
-
-//слушатель закрытия на нажатие esc
-document.addEventListener('keydown', closePopupEscape);
 
 //слушатель закрытие popup
 editProfileModalCloseButton.addEventListener('click', () => {

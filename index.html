@@ -24,39 +24,6 @@
         </div>
         <button class="intro__submit-btn" type="button"></button>
       </section>
-      <!--Редактируем профиль-->
-      <div class="popup popup_type_edit-profile">
-        <div class="popup__content">
-          <button type="button" class="popup__close"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form" name="form" novalidate>
-            <input id="user-name" value="" type="text" name="name" minlength="2" maxlength="30" required placeholder="Имя" class="popup__input popup__input_type_name">
-            <span id="user-name-error" class="error"></span>
-            <input id="about" value="" type="text" name="job" minlength="2" maxlength="30" required placeholder="Профессия" class="popup__input popup__input_type_job">
-            <span id="about-error" class="error"></span>
-            <button class="popup__button popup__submit-button" type="submit">
-              Сохранить
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <!--Редактируем карточки-->
-      <div class="popup popup_type_add-card">
-        <div class="popup__content">
-          <button type="button" class="popup__close"></button>
-          <h2 class="popup__title">Новое место</h2>
-          <form class="popup__form" name="form" novalidate>
-            <input id="name-card" value="" type="text" name="name" minlength="2" maxlength="30" required placeholder="Название" class="popup__input popup__input_type_place">
-            <span id="name-card-error" class="error"></span>
-            <input id="link" value="" type="url" name="img" minlength="2" required placeholder="Ссылка на картинку" class="popup__input popup__input_type_url">
-            <span id="link-error" class="error"></span>
-            <button class="popup__button popup__submit-button" type="submit">
-              Сохранить
-            </button>
-          </form>
-        </div>
-      </div>
 
       <!--Places-->
       <section class="places"> 
@@ -68,15 +35,6 @@
       <h2 class="footer__copyright">&copy; 2020 Mesto Russia</h2>
     </footer>
 
-    <!-- image pop up -->
-    <div class="popup popup_type_image">
-      <div class="popup__content-image">
-        <button type="button" class="popup__close"></button>
-        <img class="popup__image" src="#" alt="#">
-        <h3 class="popup__title-image"></h3>
-      </div>
-    </div>
-
     <template class="template-card">
       <article class="place">
         <button class="place__delete-button" type="button"></button>
@@ -87,6 +45,49 @@
         </div>
       </article>
     </template>
+
+    <!-- image pop up -->
+    <div class="popup popup_type_image">
+      <div class="popup__content-image">
+        <button type="button" class="popup__close"></button>
+        <img class="popup__image" src="#" alt="#">
+        <h3 class="popup__title-image"></h3>
+      </div>
+    </div>
+
+    <!--Редактируем профиль-->
+    <div class="popup popup_type_edit-profile">
+      <div class="popup__content">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="form-profile" novalidate>
+          <input id="user-name" value="" type="text" name="name-profile" minlength="2" maxlength="30" required placeholder="Имя" class="popup__input popup__input_type_name">
+          <span id="user-name-error" class="error"></span>
+          <input id="about" value="" type="text" name="job" minlength="2" maxlength="30" required placeholder="Профессия" class="popup__input popup__input_type_job">
+          <span id="about-error" class="error"></span>
+          <button class="popup__button popup__submit-button" type="submit">
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!--Редактируем карточки-->
+    <div class="popup popup_type_add-card">
+      <div class="popup__content">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="form-card" novalidate>
+          <input id="card" value="" type="text" name="name-card" minlength="2" maxlength="30" required placeholder="Название" class="popup__input popup__input_type_place">
+          <span id="card-error" class="error"></span>
+          <input id="link" value="" type="url" name="img" minlength="2" required placeholder="Ссылка на картинку" class="popup__input popup__input_type_url">
+          <span id="link-error" class="error"></span>
+          <button class="popup__button popup__submit-button" type="submit">
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
   
     <script type="module" src="./scripts/index.js"></script>
 

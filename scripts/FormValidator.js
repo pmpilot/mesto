@@ -44,8 +44,7 @@ _setEventListeners = (formElement, inputSelector, submitButtonSelector, inputErr
         event.preventDefault();
     });
 
-    const inputList = Array.from(formElement.querySelectorAll(inputSelector));
-    inputList.forEach(inputElement => {
+    Array.from(this._inputList).forEach(inputElement => {
         inputElement.addEventListener('input', () => {
            const isValid = formElement.checkValidity(); 
            this._checkInputValidity(formElement, inputElement, inputErrorClass, errorClass);
@@ -61,7 +60,7 @@ disabledButton () {
 }
 
 enableValidation = () => {
-    const formList = document.querySelectorAll(this._config.formSelector);
+    /*const formList = document.querySelectorAll(this._config.formSelector);
     formList.forEach(_formElement => {
         this._setEventListeners(
             this._formElement,
@@ -71,7 +70,8 @@ enableValidation = () => {
             this._config.errorClass,
             this._config.inactiveButtonClass
         );
-    });
+    });*/
+    this._setEventListeners(this._formElement, this._config);
 }
 }
 
