@@ -1,8 +1,8 @@
 //функция отрытие popup
 export const openPopup = (popup) => {
-  document.addEventListener('keydown', closePopupEscape);
   popup.classList.add('popup_is-opened');
-  validationCard.disableButton()
+  document.addEventListener('keydown', closePopupEscape);
+  
 };
 
 //функция закрытия на нажатие esc
@@ -11,10 +11,17 @@ export const closePopupEscape = (evt) => {
       const openPopup = document.querySelector('.popup_is-opened');
       closePopup(openPopup);
     }
-  }
+  };
 
   //функция закрытие popup
 export const closePopup = (popup) => {
-    document.removeEventListener('keydown', closePopupEscape);
     popup.classList.remove('popup_is-opened');
+    document.removeEventListener('keydown', closePopupEscape);
   };
+
+  //функция закрытия попапа на нажатие оверлей
+export const closePopupOverlay = (event, popup) => {
+  if (event.target.classList.contains("popup_is-opened")) {
+    closePopup(popup);
+  }
+};

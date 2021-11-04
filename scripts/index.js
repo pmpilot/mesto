@@ -1,8 +1,8 @@
-//import
-import {FormValidator} from './FormValidator.js';
-import {Card} from './Card.js';
-import {openPopup, closePopup, closePopupEscape} from './utils.js';
-import {initialCards} from './initial-сards.js';
+import { initialCards } from './initialCards.js';
+import { FormValidator } from './FormValidator.js';
+import { Card } from './Card.js';
+import { openPopup, closePopup, closePopupEscape, closePopupOverlay } from './utils.js';
+
 
 const validationConfig = {
   formSelector: '.popup__form',
@@ -54,11 +54,13 @@ const list = document.querySelector('.places');
 
 //слушатели отрытие popup
 profileEditButton.addEventListener('click', () => {
-  openPopup(editProfileModal)
+  openPopup(editProfileModal);
+  fillInProfileInputValues();
 });
 
 openAddCardModalButton.addEventListener('click', () => {
   openPopup(addCardModal)
+  validationCard.disabledButton();
 });
 
 
@@ -78,6 +80,24 @@ imageModalCloseButton.addEventListener('click', () => {
   closePopup(imageModal)
 });
 
+/*открытие и закрытие окон редактирования*/
+editForm.addEventListener('submit', formEditProfileSubmitHandler);
+addCardForm.addEventListener('submit', addCardSubmitHandler);
+
+
+//Слушатели закрытия попапа на нажатие оверлей
+editProfileModal.addEventListener("click", (event) => {
+  closePopupOverlay(event, editProfileModal);
+});
+
+addCardModal.addEventListener("click", (event) => {
+  closePopupOverlay(event, addCardModal);
+});
+
+imageModal.addEventListener("click", (event) => {
+  closePopupOverlay(event, imageModal);
+});
+
 //заполняет поля форм при открытии окна редактирования
 function fillInProfileInputValues() {
   nameInput.value = name.textContent;
@@ -94,12 +114,12 @@ function formEditProfileSubmitHandler (evt) {
     closePopup(editProfileModal);
 };
 
-/*редактирование карточек*/
+/*Добовление новых карточек*/
 function addCardSubmitHandler(evt) {
   evt.preventDefault();
 
-  const card = renderCard({name: placeInput.value, link: urlInput.value}, '.template-card')
-  render(card)
+  const card = generateCard({name: placeInput.value, link: urlInput.value}, '.template-card')
+  renderCard(card)
 
   placeInput.value = '';
   urlInput.value = '';
@@ -107,29 +127,6 @@ function addCardSubmitHandler(evt) {
   closePopup(addCardModal);
 };
 
-/*открытие и закрытие окон редактирования*/
-editForm.addEventListener('submit', formEditProfileSubmitHandler);
-addCardForm.addEventListener('submit', addCardSubmitHandler);
-
-
-//функция закрытия попапа на нажатие оверлей
-const closePopupOverlay = (event, popup) => {
-  if (event.target.classList.contains("popup_is-opened")) {
-    closePopup(popup);
-  }
-};
-
-editProfileModal.addEventListener("click", (event) => {
-  closePopupOverlay(event, editProfileModal);
-});
-
-addCardModal.addEventListener("click", (event) => {
-  closePopupOverlay(event, addCardModal);
-});
-
-imageModal.addEventListener("click", (event) => {
-  closePopupOverlay(event, imageModal);
-});
 
   //объект карточки
   const generateCard = (data, cardSelector) => {
@@ -143,15 +140,15 @@ imageModal.addEventListener("click", (event) => {
 
   initialCards.forEach((data) => {
     const card = generateCard(data, '.template-card')
-    renderCard(data)
-  })
+    renderCard(card)
+  });
 
   const validationProfile = new FormValidator(validationConfig, editForm)
   const validationCard = new FormValidator(validationConfig, addCardForm)
 
   const enableValidation = () => {
-    validationProfile.enableValidation()
-    validationCard.enableValidation()
+    validationProfile.enableValidation();
+    validationCard.enableValidation();
   }
 
-  enableValidation(validationConfig)
+  enableValidation(validationConfig);
