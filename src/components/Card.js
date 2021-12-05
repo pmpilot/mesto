@@ -1,14 +1,8 @@
-import { openPopup } from './utils.js';
-
-//просмотор картинок
-const imagePopup = document.querySelector('.popup_type_image');
-const img = imagePopup.querySelector('.popup__image');
-const titlePopupElement = imagePopup.querySelector('.popup__title-image');
-
 export class Card {
-    constructor(data, cardSelector){
-        this._name = data.name;
+    constructor({ data, handleImageClick }, cardSelector){
         this._link = data.link;
+        this._image = data.image;
+        this._handleImageClick = handleImageClick;
         this._cardSelector = cardSelector;
     }
 
@@ -17,16 +11,15 @@ export class Card {
       return cardElement;
   }
 
-    createCard(data) {
+    createCard() {
       this._element = this._getTemplate();
-      this._element.querySelector('.place__title').textContent = this._name;
+      this._element.querySelector('.place__title').textContent = this._image;
       this._cardLikeButton = this._element.querySelector('.place__like-icon');
-      //this._cardDeleteButton = this._element.querySelector('.place__delete-button');
 
       const cardImage = this._element.querySelector('.place__image');
 
       cardImage.src = this._link;
-      cardImage.alt = this._name;
+      cardImage.alt = this._image;
 
       this._setEventListeners();
 
@@ -44,14 +37,6 @@ export class Card {
     this._element = null;
   }
 
-//Просмотор картинок
-  _handleImageClick() {
-    img.src = this._link;
-    img.alt = this._name;
-    titlePopupElement.textContent = this._name;
-    openPopup(imagePopup);
-  }
-
   // событие передаёт в функцию-обработчик
   _setEventListeners(){
   this._element.querySelector('.place__like-icon').addEventListener('click', () => {
@@ -63,7 +48,7 @@ export class Card {
   })
 
   this._element.querySelector('.place__image').addEventListener('click', () => {
-      this._handleImageClick(this._name, this._link);
+    this._handleImageClick({link: this._link, image: this._image})
   });
 }
 }
