@@ -18,21 +18,3 @@ export class UserInfo {
     }
   }
 }
-
-/*
-//заполняет поля форм при открытии окна редактирования
-function fillInProfileInputValues() {
-    nameInput.value = name.textContent;
-    jobInput.value = job.textContent;
-  };
-  profileEditButton.addEventListener('click', fillInProfileInputValues);
-  
-  /*редактируем текст и сохраняем*/
-  /*
-  function formEditProfileSubmitHandler (evt) {
-      evt.preventDefault();
-      introTitle.textContent = nameInput.value;
-      introSubtitle.textContent = jobInput.value;
-  
-      closePopup(editProfileModal);
-  };*/

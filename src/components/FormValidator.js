@@ -31,10 +31,10 @@ _hideInputError = (errorElement, inputElement) => {
 
 _toggleButtonState = (button, isActive) => {
     if (isActive) {
-        button.classList.remove(this._config.inactiveButtonClass);
+        button.classList.remove(this.disabledButton);
         button.disabled = false;
     } else {
-        button.classList.add(this._config.inactiveButtonClass);
+        button.classList.add(this.disabledButton);
         button.disabled = 'disabled';
     }
 };
@@ -54,7 +54,7 @@ _setEventListeners = (config) => {
 };
 //отключение кнопки "сохранить"
 disabledButton () {
-    this._submitButton.classList.add(this._config.inactiveButtonClass)
+    this._submitButton.classList.add(this.disabledButton)
     this._submitButton.disabled = true;
 }
 
