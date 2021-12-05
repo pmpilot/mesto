@@ -1,7 +1,7 @@
 # mesto
 
-sprint-4 (29-Olive)
-**[Проект на GitHub Pages](https://pmpilot.github.io/mesto/)**
+sprint-8 (31-Olive)
+**[Проект на GitHub Pages]**
 
 ## Описание проекта:
 1. Данный проект посвящен теме путешествий. Целью проекта является освоение навыков подключение JavaScript.
