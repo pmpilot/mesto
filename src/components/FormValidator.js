@@ -18,7 +18,7 @@ _hideInputError = (errorElement, inputElement) => {
     inputElement.classList.remove(this._config.inputErrorClass);
 };
 
-    //валидация поля
+//валидация поля
     _checkInputValidity = (formElement, inputElement) => {
         const isInputNotValid = !inputElement.validity.valid;
         const errorElement = formElement.querySelector(`#${inputElement.id}-error`); //# обозначение идентификатора
@@ -31,11 +31,10 @@ _hideInputError = (errorElement, inputElement) => {
 
 _toggleButtonState = (button, isActive) => {
     if (isActive) {
-        button.classList.remove(this.disabledButton);
+        button.classList.remove(this._config.inactiveButtonClass);
         button.disabled = false;
     } else {
-        button.classList.add(this.disabledButton);
-        button.disabled = 'disabled';
+        this.disabledButton();
     }
 };
 
@@ -54,7 +53,7 @@ _setEventListeners = (config) => {
 };
 //отключение кнопки "сохранить"
 disabledButton () {
-    this._submitButton.classList.add(this.disabledButton)
+    this._submitButton.classList.add(this._config.inactiveButtonClass)
     this._submitButton.disabled = true;
 }
 
