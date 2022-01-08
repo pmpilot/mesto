@@ -1,4 +1,4 @@
-.profile__avatar-container {
+.intro__container {
     display: flex;
     position: relative;
     align-items: center;
@@ -6,15 +6,15 @@
     margin: 0 0 22px 0;
 }
 
-.profile__avatar-container:hover {
+.intro__container:hover {
     cursor: pointer;
 }
 
-.profile__avatar-container:hover .profile__avatar {
+.intro__container:hover .profile__avatar {
     opacity: .4;
     transition: .5s linear;
 }
 
-.profile__avatar-container:hover .profile__avatar-edit {
+.intro__container:hover .profile__avatar-edit {
     display: block;
 }
