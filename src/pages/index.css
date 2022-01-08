@@ -18,7 +18,7 @@
 @import url('../blocks/intro/__title/intro__title.css');
 @import url('../blocks/intro/__section/intro__section.css');
 @import url('../blocks/intro/__open/intro__open.css');
-@import url('../blocks/intro/__avatar/_type/intro__avatar_type_edit.css');
+@import url('../blocks/intro/__avatar-button/intro__avatar-button.css');
 @import url('../blocks/intro/__container/intro__container.css');
 /*popup*/
 @import url('../blocks/popup/__input/popup__input.css');

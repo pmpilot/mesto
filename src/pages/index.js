@@ -65,7 +65,7 @@ const popupAvatarSelector = '.popup_type_avatarpopup'
 
 const formAvatar = popupAvatar.querySelector('.popup__form-avatar')
 const profileAvatarInput = popupAvatar.querySelector('.popup__input_type_avatar')
-const updateAvatarButton = document.querySelector('.profile__avatar-edit')
+const updateAvatarButton = document.querySelector('.intro__avatar-button')
 const updateAvatarButtonSelector = '.profile__avatar-edit'
 const avatarButtonSave = popupAvatar.querySelector('.profile__avatar-edit')
 const addPopupButton = document.querySelector('.intro__submit-btn') //удаление карточки
