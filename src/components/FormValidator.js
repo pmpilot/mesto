@@ -18,24 +18,22 @@ _hideInputError = (errorElement, inputElement) => {
 };
 
 //валидация поля
-    _checkInputValidity = (formElement, inputElement) => {
-        const isInputNotValid = !inputElement.validity.valid;
-        const errorElement = formElement.querySelector(`#${inputElement.id}-error`); //# обозначение идентификатора
-        if (isInputNotValid) {
-            this._showInputError(errorElement, inputElement);
-        } else {
-            this._hideInputError(errorElement, inputElement);
-        }
-    };
+_checkInputValidity = (formElement, inputElement) => {
+    const isInputNotValid = !inputElement.validity.valid;
+    const errorElement = formElement.querySelector(`#${inputElement.id}-error`); //# обозначение идентификатора
+    if (isInputNotValid) {
+        this._showInputError(errorElement, inputElement);
+    } else {
+        this._hideInputError(errorElement, inputElement);
+    }
+};
 
-    resetValidation() {
-        this._toggleButtonState(); 
-        
-        this._inputList.forEach((inputElement) => {
-          const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
-          this._hideInputError(errorElement, inputElement);
-        });
-      }
+resetValidation() {
+    this._inputList.forEach((inputElement) => {
+        const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
+        this._hideInputError(errorElement, inputElement);
+    });
+}
 
 _toggleButtonState = (isActive) => {
     if (isActive) {

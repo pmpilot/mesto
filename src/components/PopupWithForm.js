@@ -30,8 +30,7 @@ export class PopupWithForm extends Popup {
     _submitClick(event) {
         event.preventDefault();
         this._handleFormSubmit(this._getInputValues());
-        this.close();
-    }; 
+    };
 
      //закрытие попапа когда форма была засабмичена
     setEventListeners() {

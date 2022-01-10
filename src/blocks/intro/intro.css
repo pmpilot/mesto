@@ -1,7 +1,7 @@
 .intro{
     display: flex;
     flex-direction: row;
-    margin: 0 auto 47.25px auto;
+    margin: 0 auto 48.25px auto;
     align-items: center;
     max-width: 880px;
 }

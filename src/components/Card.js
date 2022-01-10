@@ -17,17 +17,6 @@ export class Card {
       return cardElement;
     }
 
-      //like
-    _handleLikeClick() {
-      this._element.querySelector('.place__like-icon').classList.toggle('place__like-black')
-    }
-
-      //Удаляем карточки
-    _handleDeleteClick() {
-      this._element.remove();
-      this._element = null;
-    }
-
     createCard() {
       this._element = this._getTemplate();
         this._imgElement = this._element.querySelector('.place__image')
@@ -47,50 +36,50 @@ export class Card {
         return this._element
     }
 
-  _setEventListeners() {
-    this._handleLike.addEventListener('click', () => {
-        this._likeImageClick()
-        this._handleLikeClick()
-    })
+    _setEventListeners() {
+        this._handleLike.addEventListener('click', () => {
+            this._likeImageClick()
+        })
 
-    const deleteButton = this._element.querySelector('.place__delete-button')
+        const deleteButton = this._element.querySelector('.place__delete-button')
 
-    deleteButton.addEventListener('click', () => {
-        this._handleCardDelete()
-    })
+        deleteButton.addEventListener('click', () => {
+            this._handleCardDelete()
+        })
 
-    this._imgElement.addEventListener('click', () => {
-        this._handleImageClick(this._link, this._name)
-    })
-}
-
-  removeCard() {
-    this._element.remove()
-}
-
-renderLikes() {
-    this._likes.textContent = this._countLikes.length
-    this._showLikes(this._userId)
-}
-
-getIdCard() {
-    return this._cardId
-}
-
-likedCard() {
-    return this._countLikes.some(like => {
-        return like._id === this._userId
-    })
-}
-
-_showLikes() {
-    if (this.likedCard(this._userId)) {
-        this._handleLike.classList.add('place__like-black')
-    } else {
-        this._handleLike.classList.remove('place__like-black')
+        this._imgElement.addEventListener('click', () => {
+            this._handleImageClick(this._link, this._name)
+        })
     }
-}
-setLikes(list) {
-    this._countLikes = list
-}
+
+    removeCard() {
+        this._element.remove()
+    }
+
+    renderLikes() {
+        this._likes.textContent = this._countLikes.length
+        this._showLikes(this._userId)
+    }
+
+    getIdCard() {
+        return this._cardId
+    }
+
+    likedCard() {
+        return this._countLikes.some(like => {
+            return like._id === this._userId
+        })
+    }
+
+    _showLikes() {
+        if (this.likedCard(this._userId)) {
+            this._handleLike.classList.add('place__like-black')
+        } else {
+            this._handleLike.classList.remove('place__like-black')
+        }
+    }
+
+    setLikes(list) {
+        this._countLikes = list
+    }
 }
